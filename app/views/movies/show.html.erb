@@ -1,0 +1,18 @@
+<h1><%= @movie.title %></h1>
+
+
+  <% @movie.reviews.each do |review| %>
+    <div class="card">
+      <h5 class="card-title"><%= review.title %></h5>
+      <p class="card-text"><%= review.description %></p>
+  <% end %>
+
+
+
+
+<%= link_to 'Write review', new_movie_review_path(@movie) %>
+<%= link_to 'Back', movies_path %>
+<%= link_to "Delete #{@movie.title}",
+            movie_path(@movie),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>

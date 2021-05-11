@@ -1,0 +1,7 @@
+<h1>test</h1>
+
+<%= simple_form_for [ @movie, @review ] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>

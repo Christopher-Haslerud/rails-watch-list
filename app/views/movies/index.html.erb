@@ -1,0 +1,16 @@
+<div class="container">
+<h1>List of movies</h1>
+
+  <div class="d-flex flex-wrap p-2">
+  <% @movies.each do |movie| %>
+  <div class="card" style="width: 300px">
+    <img class="card-img-top" src="<%= movie.poster_url %>" alt="">
+    <h4 class="card-title"><%= movie.title %></h4>
+    <p class="card-text"><%= movie.rating %></p>
+    <p class="card-text"><%= movie.overview %></p>
+    <%= link_to 'Show', movie_path(movie) %>
+    </div>
+  <% end %>
+  </div>
+  
+</div>
